@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon">
+</head>
+<body onresize="updatePosCards()" oncontextmenu="return false">
+
+    <article id="game">
+
+
+        <div id="allCards">
+
+            <div id="cardsTable"></div>
+
+            <div class="cards" id="cardsP1">
+                <div id="card1P1">
+                    <div id="c1p1" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+                <div id="card2P1">
+                    <div id="c2p1" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+            </div>
+    
+            <div class="cards" id="cardsP2">
+                <div id="card1P2" class="card">
+                    <div id="c1p2" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+                <div id="card2P2" class="card">
+                    <div  id="c2p2" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+            </div>
+            
+            <div class="cards" id="cardsP3">
+                <div id="card1P3" class="card">
+                    <div  id="c1p3" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+                <div id="card2P3" class="card">
+                    <div  id="c2p3" class="cardFront"></div>
+                    <div class="cardBack"></div>
+                </div>
+            </div>
+    
+            <div id="baralho"></div>
+    
+        </div>
+
+        
+        <div id="btn">
+            <button id="allIn">ALL-IN</button>
+            <button id="bet">PAGAR</button>
+            <button id="skip">PASSAR</button>
+            <button id="upBet">AUMENTAR</button>
+            <button id="giveUp">SAIR</button>
+        </div>
+
+        
+        <div id="player1">
+            <h3 class="names" id="playerName"></h3>
+            <div class="imgPerfil" id="perfilPlayer"><p id="losser">PERDEU</p></div>
+
+            <div class="moneyBet moneyB1">$<span id="betMoney1"></span>.000</div>
+            
+            <div class="money">
+                <h3>$</h3><h3 id="money1"></h3><h3>.000</h3>
+            </div>
+
+            <div class="action" id="actionP1"></div>
+            <div class="dealer" id="dealerP1"></div>
+        </div>
+
+
+        <div class="player" id="player2">
+            
+            <h4 class="names" id="player2Name">AAAABBBB</h4>
+            <div class="imgPerfil" id="perfilPlayer2"></div>
+
+            <div class="moneyBet moneyB2">$<span id="betMoney2"></span>.000</div>        
+            <div class="money">
+                <h3>$</h3><h3 id="money2"></h3><h3>.000</h3>
+            </div>
+        
+            <div class="action" id="actionP2"></div>
+            <div class="dealer" id="dealerP2"></div>
+            <div class="loading" id="loading2"><div id="content1p2"></div><div id="content2p2"></div><div id="content3p2"></div></div>
+        </div>
+
+        <div class="player" id="player3">
+
+            <h4 class="names" id="player3Name">BBBBAAAA</h4>
+            <div class="imgPerfil" id="perfilPlayer3"></div>
+
+            <div class="moneyBet moneyB3">$<span id="betMoney3"></span>.000</div>
+            <div class="money">
+                <h3>$</h3><h3 id="money3"></h3><h3>.000</h3>
+            </div>
+            
+            <div class="action" id="actionP3"></div>
+            <div class="dealer" id="dealerP3"></div>
+            <div class="loading" id="loading3"><div id="content1p3"></div><div id="content2p3"></div><div id="content3p3"></div></div>
+        </div>
+
+        <div id="tableCenter">
+            <div id="moneyBetTable" class="moneyBet">$<span id="moneyTable"></span>.000</div>
+        </div>
+
+
+        <div id="aumentar">
+            <div id="btnApostar">
+                <button onclick="x()" id="x">x</button>
+
+                <button onclick="mais5()" class="mais g" id="mais5"></button>
+                <button onclick="mais1()" class="mais p" id="mais1"></button>
+                <h3>$</h3><h3 id="betMoneyUp"></h3><h3>.000</h3>
+                <button onclick="menos1()" class="menos p" id="menos1"></button>
+                <button onclick="menos5()" class="menos g" id="menos5"></button>
+            
+                <button id="aumAposta">APOSTAR</button>
+            </div>
+        </div>
+
+        <div id="feed">
+            <div id="imgWinner"></div>
+            <h1 id="winner"></h1>
+            <p id="playWinner"></p>
+            <button class="restart restFeed" onclick="restart(0)">RECOMEÇAR</button>
+        </div>
+        
+        <div id="feedTie">
+            <p id="playTie"></p>
+            <button class="restart restFeed" onclick="restart(1)">RECOMEÇAR</button>
+        </div>
+
+        <button class="restart" id="restart" onclick="window.location.reload()">JOGAR NOVAMENTE</button>
+    
+    </article>
+
+
+    <section id="menu">
+        
+        <div id="boardMenu">
+            <input class="menuPadrao" type="text" placeholder="NOME" name="name" id="name">
+            <button class="menuPadrao" id="selectPerson"></button>
+            <button class="menuPadrao" id="play">JOGAR</button>
+        </div>
+
+        <div id="msnInicio">
+            <p>se as cartas estiverem tortas, altere o tamanho da janela ou o zoom.</p>
+        </div>
+
+        <div id="boardPersons">
+        </div>
+
+    </section>
+    
+    <main>
+        <p>DIMENSÕES DA TELA NÃO COMPATÍVEL :(</p>
+    </main>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
