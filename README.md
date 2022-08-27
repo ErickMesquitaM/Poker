@@ -11,6 +11,7 @@ feito em fevereiro de 2022 <br>
 <br><br>
 
 Tela Inicial:
+<br><br>
 ![tela-inicial-poker](https://user-images.githubusercontent.com/90268052/187032109-aa2d3bdf-c07e-42df-bac9-6d2b212774c2.png)
 
 <br><br>
