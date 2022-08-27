@@ -16,13 +16,13 @@ Tela Inicial:
 <br><br>
 
 Jogo:
-<br>
+<br><br>
 ![jogo-poker](https://user-images.githubusercontent.com/90268052/187032200-3293a4cb-4ee4-429e-9d59-7cbaba0906f4.png)
 
 <br><br>
 
 Fim de Jogo:
-<br>
+<br><br>
 ![fim-de-jogo-poker](https://user-images.githubusercontent.com/90268052/187032230-df6fcd10-8b3b-4503-858e-cc0c2e4f9206.png)
 
 <br><br>
